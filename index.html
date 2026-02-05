@@ -8,15 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #2563eb;        /* blue */
-      --accent-2: #06b6d4;      /* cyan */
-      --accent-3: #22c55e;      /* green */
-      --border: #e2e8f0;
-      --gradient: linear-gradient(135deg, #2563eb, #06b6d4);
+      --bg: #0b1220;            /* deep navy background */
+      --surface: #0f172a;       /* section surface */
+      --card: #111c34;          /* inner cards */
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;        /* cool cyan */
+      --accent-2: #22c55e;      /* subtle green */
+      --border: rgba(255,255,255,0.08);
+      --gradient: linear-gradient(135deg, #38bdf8, #22c55e);
     }
 
     * { box-sizing: border-box; }
@@ -24,15 +24,18 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #111827, var(--bg));
       color: var(--text);
-      background: radial-gradient(circle at top, #e0f2fe, var(--bg));
       line-height: 1.65;
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
-      color: white;
-      padding: 4rem 1.5rem 3rem;
+      max-width: 1100px;
+      margin: 3rem auto 2rem;
+      padding: 2.8rem 3rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.55);
       position: relative;
       overflow: hidden;
     }
@@ -41,46 +44,48 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(34,197,94,0.25), transparent 60%);
+      background: radial-gradient(circle at top right, rgba(56,189,248,0.18), transparent 55%);
     }
 
     header h1 {
       margin: 0;
       font-size: 2.6rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       position: relative;
     }
 
     header p {
       margin: 0.6rem 0 0;
-      color: #e5e7eb;
-      font-size: 1.1rem;
+      color: #c7d2fe;
+      font-size: 1.05rem;
       position: relative;
     }
 
     .header-meta {
-      margin-top: 1.4rem;
+      margin-top: 1.3rem;
       font-size: 0.95rem;
-      color: #c7d2fe;
+      color: var(--muted);
       position: relative;
     }
 
     nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+      padding: 0.9rem 1.2rem;
+      border-radius: 14px;
+      background: rgba(15,23,42,0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
     }
 
     nav ul {
       list-style: none;
-      margin: 0 auto;
-      padding: 0.9rem 1rem;
-      max-width: 1100px;
+      margin: 0;
+      padding: 0;
       display: flex;
-      gap: 2rem;
+      gap: 2.2rem;
+      justify-content: center;
     }
 
     nav a {
@@ -101,24 +106,22 @@
       transition: width 0.25s ease;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav a:hover::after { width: 100%; }
 
     main {
       max-width: 1100px;
-      margin: 3rem auto;
+      margin: 0 auto 3rem;
       padding: 0 1.4rem;
     }
 
     section {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 2.6rem 2.8rem;
-      margin-bottom: 2.4rem;
-      box-shadow: 0 20px 45px rgba(15,23,42,0.08);
+      background: linear-gradient(180deg, #0f172a, #020617);
+      border-radius: 22px;
+      padding: 2.8rem 3rem;
+      margin-bottom: 2.6rem;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
       position: relative;
-      overflow: hidden;
     }
 
     section::before {
@@ -127,23 +130,25 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background: var(--gradient);
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
     }
 
     h2 {
       margin-top: 0;
-      font-size: 1.75rem;
+      font-size: 1.8rem;
       font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.4rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
     }
 
     h3 {
       margin-bottom: 0.35rem;
       font-size: 1.15rem;
       font-weight: 600;
-      color: #1e293b;
+      color: #e2e8f0;
     }
 
     .subtext {
@@ -151,25 +156,20 @@
       font-size: 0.95rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
-    }
-
+    ul { padding-left: 1.2rem; }
     li { margin-bottom: 0.45rem; }
 
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.4rem;
+      gap: 2.8rem;
     }
 
-    .job {
-      margin-bottom: 1.6rem;
-    }
+    .job { margin-bottom: 1.8rem; }
 
     footer {
       text-align: center;
-      padding: 2.2rem 1rem 2.8rem;
+      padding: 2.8rem 1rem 3.5rem;
       color: var(--muted);
       font-size: 0.9rem;
     }
@@ -181,9 +181,10 @@
       font-weight: 600;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       .two-col { grid-template-columns: 1fr; }
-      header h1 { font-size: 2.1rem; }
+      header { margin: 1.5rem; padding: 2.2rem; }
+      header h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -267,10 +268,10 @@
 <section id="cover">
   <h2>Cover Letter Summary</h2>
   <p>
-    I am a Mechanical Engineering student at Wayne State University with a growing interest in mechatronics and automotive systems. My coursework has provided a strong foundation in mechanics, thermodynamics, and machine design, while my experience with Siemens NX has strengthened my CAD and modeling abilities.
+    I am a Mechanical Engineering student at Wayne State University with a strong interest in mechatronics and automotive systems. My coursework has provided a solid foundation in mechanics, thermodynamics, and machine design, while my experience with Siemens NX has strengthened my CAD and modeling abilities.
   </p>
   <p>
-    I am motivated by interdisciplinary engineering environments that integrate mechanical, electrical, and software systems, particularly in the context of sustainable mobility and electric vehicle technologies.
+    I am particularly motivated by interdisciplinary engineering environments that integrate mechanical, electrical, and software systems, especially in the context of electric mobility and sustainable transportation.
   </p>
 </section>
 
