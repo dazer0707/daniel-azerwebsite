@@ -4,160 +4,232 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel Azer | Mechanical Engineering Student</title>
-  <meta name="description" content="Daniel Azer – Mechanical Engineering student at Wayne State University. Resume, projects, and professional experience." />
+  <meta name="description" content="Daniel Azer – Mechanical Engineering student at Wayne State University. Résumé, projects, and professional experience." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f7f7f7;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
     }
+
     header {
-      background: #111827;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
-      padding: 2rem 1rem;
+      padding: 3.5rem 1.5rem 2.5rem;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
+
     header p {
-      margin: 0.5rem 0 0;
-      color: #d1d5db;
+      margin: 0.6rem 0 0;
+      color: #cbd5e1;
+      font-size: 1.05rem;
     }
-    nav {
-      background: #1f2933;
-      padding: 0.5rem 1rem;
-    }
-    nav a {
+
+    .header-meta {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
       color: #e5e7eb;
-      margin-right: 1rem;
-      text-decoration: none;
-      font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
+
+    nav {
       background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-bottom: 1px solid var(--border);
     }
+
+    nav ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
+      max-width: 1000px;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.2rem;
+    }
+
     section {
-      margin-bottom: 2.5rem;
+      background: var(--card);
+      border-radius: 14px;
+      padding: 2.2rem 2.4rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
     }
+
     h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #111827;
+      margin-top: 0;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.6rem;
     }
+
     h3 {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
+
+    .subtext {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     ul {
       padding-left: 1.2rem;
     }
+
+    li { margin-bottom: 0.4rem; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .job {
+      margin-bottom: 1.4rem;
+    }
+
     footer {
       text-align: center;
-      padding: 1.5rem;
-      color: #6b7280;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
-    .contact {
-      font-size: 0.95rem;
-    }
-    .job {
-      margin-bottom: 1.2rem;
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
+      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Daniel Azer</h1>
-    <p>Mechanical Engineering Student | Wayne State University</p>
-    <p class="contact">Macomb, MI · 248-873-9842 · Dazer0707@gmail.com</p>
-  </header>
 
-  <nav>
-    <a href="#resume">Résumé</a>
-    <a href="#projects">Projects</a>
-    <a href="#cover-letter">Cover Letter</a>
-  </nav>
+<header>
+  <h1>Daniel Azer</h1>
+  <p>Mechanical Engineering Student · Wayne State University</p>
+  <div class="header-meta">Macomb, MI · 248-873-9842 · Dazer0707@gmail.com</div>
+</header>
 
-  <main>
-    <section id="resume">
-      <h2>Résumé</h2>
+<nav>
+  <ul>
+    <li><a href="#resume">Résumé</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#cover">Cover Letter</a></li>
+  </ul>
+</nav>
 
+<main>
+
+<section id="resume">
+  <h2>Résumé</h2>
+
+  <div class="two-col">
+    <div>
       <h3>Education</h3>
-      <p><strong>Wayne State University</strong>, Detroit, MI<br />
-      Bachelor of Science in Mechanical Engineering (Expected May 2029)<br />
-      GPA: 3.3</p>
+      <p><strong>Wayne State University</strong><br>
+      Bachelor of Science in Mechanical Engineering<br>
+      <span class="subtext">Expected Graduation: May 2029 · GPA: 3.3</span></p>
 
-      <p><strong>International Academy of Macomb</strong>, Clinton Township, MI<br />
-      High School Diploma, May 2025</p>
+      <p><strong>International Academy of Macomb</strong><br>
+      <span class="subtext">High School Diploma · May 2025</span></p>
+    </div>
 
+    <div>
       <h3>Technical Skills</h3>
       <ul>
         <li><strong>Programming:</strong> Python, MATLAB</li>
         <li><strong>Engineering Tools:</strong> Siemens NX (CAD/CAM/CAE)</li>
         <li><strong>Manufacturing:</strong> 3D Printing</li>
-        <li><strong>Other:</strong> Microsoft Office, Problem Solving, Bilingual (English / Arabic – Intermediate)</li>
+        <li><strong>Other:</strong> Microsoft Office, Problem Solving</li>
+        <li><strong>Languages:</strong> English, Arabic (Intermediate)</li>
       </ul>
+    </div>
+  </div>
 
-      <h3>Work Experience</h3>
-      <div class="job">
-        <strong>Front of House Employee</strong> – Chick-fil-A, Shelby, MI<br />
-        <em>Feb 2024 – Present</em>
-        <ul>
-          <li>Worked efficiently in high-volume, fast-paced environments</li>
-          <li>Collaborated with team members to improve workflow and customer satisfaction</li>
-          <li>Trained new employees and followed safety protocols</li>
-        </ul>
-      </div>
+  <h3>Work Experience</h3>
 
-      <div class="job">
-        <strong>Banquet Server</strong> – Crank's Catering, Shelby, MI<br />
-        <em>Jul 2023 – Nov 2023</em>
-        <ul>
-          <li>Coordinated logistics for events serving 100+ guests</li>
-          <li>Managed multiple tasks under time constraints</li>
-        </ul>
-      </div>
-    </section>
+  <div class="job">
+    <strong>Front of House Employee</strong> — Chick-fil-A, Shelby, MI<br>
+    <span class="subtext">February 2024 – Present</span>
+    <ul>
+      <li>Performed efficiently in high-volume, fast-paced environments</li>
+      <li>Collaborated with team members to optimize workflow and service quality</li>
+      <li>Trained new employees and followed operational safety standards</li>
+    </ul>
+  </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <strong>Adjustable Phone Stand Design</strong> (January 2026)
-      <ul>
-        <li>Designed an adjustable phone stand to build CAD proficiency</li>
-        <li>Used sketching, extrude, revolve, and assembly constraints</li>
-        <li>Produced engineering drawings with dimensions and tolerances</li>
-      </ul>
-    </section>
+  <div class="job">
+    <strong>Banquet Server</strong> — Crank's Catering, Shelby, MI<br>
+    <span class="subtext">July 2023 – November 2023</span>
+    <ul>
+      <li>Supported logistics for large-scale events serving 100+ guests</li>
+      <li>Balanced multiple responsibilities under strict time constraints</li>
+    </ul>
+  </div>
+</section>
 
-    <section id="cover-letter">
-      <h2>Cover Letter (Excerpt)</h2>
-      <p>
-        I am a Mechanical Engineering student at Wayne State University with a strong interest in mechatronics and automotive technology.
-        My academic background in mechanics, thermodynamics, and CAD design has prepared me to contribute to interdisciplinary engineering teams.
-      </p>
-      <p>
-        I am particularly interested in roles that combine mechanical systems with electrical and software integration, and I am motivated by
-        companies advancing sustainable mobility and electric vehicle technology.
-      </p>
-      <p>
-        This website serves as a digital version of my professional materials, improving accessibility, navigability, and online presence
-        compared to a traditional paper résumé.
-      </p>
-    </section>
-  </main>
+<section id="projects">
+  <h2>Projects</h2>
+  <h3>Adjustable Phone Stand Design</h3>
+  <span class="subtext">January 2026</span>
+  <ul>
+    <li>Designed an adjustable phone stand to strengthen CAD modeling skills</li>
+    <li>Applied sketching, extrusion, revolved features, and assembly constraints</li>
+    <li>Produced engineering drawings with orthographic views, dimensions, and tolerances</li>
+  </ul>
+</section>
 
-  <footer>
-    © 2026 Daniel Azer · Hosted on GitHub Pages
-  </footer>
+<section id="cover">
+  <h2>Cover Letter Summary</h2>
+  <p>
+    I am a Mechanical Engineering student at Wayne State University with a growing interest in mechatronics and automotive systems. My coursework has provided a strong foundation in mechanics, thermodynamics, and machine design, while my experience with Siemens NX has strengthened my CAD and modeling abilities.
+  </p>
+  <p>
+    I am motivated by interdisciplinary engineering environments that integrate mechanical, electrical, and software systems, particularly in the context of sustainable mobility and electric vehicle technologies.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Daniel Azer · Hosted on GitHub Pages
+</footer>
+
 </body>
 </html>
